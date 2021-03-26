@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace XVagas.Controllers
+namespace XVagas2.Controllers
 {
     [ApiController]
     [Route("[controller]")]

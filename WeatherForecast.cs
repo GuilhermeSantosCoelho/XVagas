@@ -1,6 +1,6 @@
 using System;
 
-namespace XVagas
+namespace XVagas2
 {
     public class WeatherForecast
     {
