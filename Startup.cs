@@ -7,13 +7,16 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MySqlConnector;
+using XVagas.Models;
 
-namespace XVagas2
+namespace XVagas
 {
     public class Startup
     {
@@ -30,6 +33,9 @@ namespace XVagas2
             services.AddControllers();
 
             services.AddSwaggerGen();
+
+            // services.AddTransient<MySqlConnection>(_ => new MySqlConnection(Configuration["ConnectionStrings:Default"]));
+            services.AddDbContext<DatabaseContext>(options => options.UseMySql(Configuration["ConnectionStrings:Default"]));
 
             services.AddCors(options => {
                 options.AddPolicy("CorsPolicy", builder => builder

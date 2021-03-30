@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "XVagas2": {
+    "XVagas": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

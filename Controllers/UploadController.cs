@@ -3,7 +3,7 @@ using System.IO;
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace XVagas2.Controllers
+namespace XVagas.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -20,13 +20,17 @@ namespace XVagas2.Controllers
                 if (file.Length > 0)
                 {
                     var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    var fullPath = Path.Combine(pathToSave, fileName);
-                    var dbPath = Path.Combine(folderName, fileName);
-                    using (var stream = new FileStream(fullPath, FileMode.Create))
-                    {
-                        file.CopyTo(stream);
+                    if(fileName.Substring(0).Split(".")[1] == "pdf"){
+                        var fullPath = Path.Combine(pathToSave, DateTime.Now.ToString("yyyyMMddTHHmmssZ") + fileName);
+                        var dbPath = Path.Combine(folderName, fileName);
+                        using (var stream = new FileStream(fullPath, FileMode.Create))
+                        {
+                            file.CopyTo(stream);
+                        }
+                        return Ok(new { dbPath });
+                    }else{
+                        return StatusCode(500, $"O arquivo deve estar em formato PDF.");
                     }
-                    return Ok(new { dbPath });
                 }
                 else
                 {

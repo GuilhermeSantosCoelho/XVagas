@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Guilherme\\Desktop\\Guilherme\\BSI\\XVagas2\\XVagas2.csproj",
+  "FilePath": "c:\\Users\\Guilherme\\Desktop\\Guilherme\\BSI\\XVagas\\XVagas.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14389,7 +14389,7 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "XVagas2",
+  "RootNamespace": "XVagas",
   "Documents": [],
   "SerializationFormat": "0.2"
 }
