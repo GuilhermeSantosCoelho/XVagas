@@ -41,3 +41,5 @@ C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\obj\Debug\netcoreapp3.1\staticwe
 C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\obj\Debug\netcoreapp3.1\XVagas.dll
 C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\obj\Debug\netcoreapp3.1\XVagas.pdb
 C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\obj\Debug\netcoreapp3.1\XVagas.genruntimeconfig.cache
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\bin\Debug\netcoreapp3.1\AutoMapper.Collection.dll

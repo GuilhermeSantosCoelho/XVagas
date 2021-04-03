@@ -9,7 +9,7 @@ namespace XVagas.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        [HttpPost, DisableRequestSizeLimit]
+        [HttpPost("UploadFile"), DisableRequestSizeLimit]
         public IActionResult Upload()
         {
             try
