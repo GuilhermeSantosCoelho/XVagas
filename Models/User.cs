@@ -9,6 +9,10 @@ namespace XVagas.Models{
         [Column(name: "ID")]
         public long Id { get; set; }
         
+        [StringLength(150)]
+		[Column(name: "NomeCompleto")]
+        public string NomeCompleto { get; set; }   
+
         [StringLength(100)]
 		[Column(name: "Email")]
         public string Email { get; set; }   

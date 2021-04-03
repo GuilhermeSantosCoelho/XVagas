@@ -31,10 +31,8 @@ namespace XVagas
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
             services.AddSwaggerGen();
 
-            // services.AddTransient<MySqlConnection>(_ => new MySqlConnection(Configuration["ConnectionStrings:Default"]));
             services.AddDbContext<DatabaseContext>(options => options.UseMySql(Configuration["ConnectionStrings:Default"]));
 
             services.AddCors(options => {
