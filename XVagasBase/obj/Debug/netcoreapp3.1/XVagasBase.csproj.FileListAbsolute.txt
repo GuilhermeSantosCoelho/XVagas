@@ -1,0 +1,9 @@
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\XVagasBase\obj\Debug\netcoreapp3.1\XVagasBase.csprojAssemblyReference.cache
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\XVagasBase\obj\Debug\netcoreapp3.1\XVagasBase.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\XVagasBase\obj\Debug\netcoreapp3.1\XVagasBase.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\XVagasBase\obj\Debug\netcoreapp3.1\XVagasBase.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\XVagasBase\bin\Debug\netcoreapp3.1\XVagasBase.deps.json
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\XVagasBase\bin\Debug\netcoreapp3.1\XVagasBase.dll
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\XVagasBase\bin\Debug\netcoreapp3.1\XVagasBase.pdb
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\XVagasBase\obj\Debug\netcoreapp3.1\XVagasBase.dll
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\XVagasBase\obj\Debug\netcoreapp3.1\XVagasBase.pdb

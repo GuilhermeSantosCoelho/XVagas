@@ -71,8 +71,8 @@ namespace XVagas
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions()
             {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Api/Resources")),
-                RequestPath = new Microsoft.AspNetCore.Http.PathString("/Api/Resources")
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
+                RequestPath = new Microsoft.AspNetCore.Http.PathString("/Resources")
             });
 
             app.UseRouting();

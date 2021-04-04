@@ -97,3 +97,6 @@ C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\Api\obj\Debug\netcoreapp3.1\XVag
 C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\Api\obj\Debug\netcoreapp3.1\staticwebassets\XVagas.StaticWebAssets.Manifest.cache
 C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\Api\obj\Debug\netcoreapp3.1\staticwebassets\XVagas.StaticWebAssets.xml
 C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\Api\obj\Debug\netcoreapp3.1\XVagas.genruntimeconfig.cache
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\Api\bin\Debug\netcoreapp3.1\X.PagedList.dll
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\Api\bin\Debug\netcoreapp3.1\XVagasBase.dll
+C:\Users\Guilherme\Desktop\Guilherme\BSI\XVagas\Api\bin\Debug\netcoreapp3.1\XVagasBase.pdb

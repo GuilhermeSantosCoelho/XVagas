@@ -16,7 +16,7 @@ namespace XVagas.Globals
                 {
                     var builder = new ConfigurationBuilder()
                        .SetBasePath(Directory.GetCurrentDirectory())
-                       .AddJsonFile("Api/appsettings.json", optional: false, reloadOnChange: true)
+                       .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                        .AddEnvironmentVariables();
 
                     Config = builder.Build();
