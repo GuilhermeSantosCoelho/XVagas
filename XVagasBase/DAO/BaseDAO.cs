@@ -45,7 +45,6 @@ namespace Base.DAO
 
         public virtual void SetIncludes(TContext ctx) { }
 
-
         public virtual VO GetOne(long id)
         {
             Entity entity;
@@ -54,17 +53,6 @@ namespace Base.DAO
                 entity = context.Set<Entity>().LoadRelated().Where(m => m.Id == id).FirstOrDefault();
                 SetIncludes(context);
                 return entity != null ? FromEntityToVO(entity) : null;
-            }
-        }
-
-        public virtual dynamic GetUserAccess(VO user)
-        {
-            using (TContext context = new TContext())
-            {
-                IQueryable<Entity> dbQuery = context.Set<Entity>();
- 
-                dbQuery = GetUserWhere(dbQuery, user);
-                return dbQuery.ToList();
             }
         }
 
@@ -267,57 +255,6 @@ namespace Base.DAO
             return _mapper.Map<VO,Entity>(vo, entity);
         }
 
-        public virtual IQueryable<Entity> IntervalDate(IQueryable<Entity> originalQuery, VO filter, string attribute)
-        {            
-            Expression queryExpr = originalQuery.Expression;
-            Expression val;
-            var parameter = Expression.Parameter(typeof(Entity),"o");            
-            var initialDate = filter.GetType().GetProperty("initialDate").GetValue(filter, null);
-            var finalDate = filter.GetType().GetProperty("finalDate").GetValue(filter, null);
-            if(initialDate==null && finalDate==null)
-            {
-                return originalQuery;
-            }
-
-            if(initialDate!=null && finalDate==null)
-            {
-                val = Expression.Constant(initialDate, initialDate.GetType().GetNullableType());
-                var propr = Expression.Property(parameter, attribute); 
-                var body = Expression.GreaterThanOrEqual(propr, val); 
-                var selectorExp =  Expression.Lambda<Func<Entity, bool>>(body, parameter);                    
-                originalQuery = System.Linq.Queryable.Where(originalQuery, selectorExp);
-            }
-                                    
-            else if(finalDate!=null && initialDate==null)
-            {
-                val = Expression.Constant(finalDate, finalDate.GetType().GetNullableType());
-                var propr = Expression.Property(parameter, attribute); 
-                var body = Expression.LessThanOrEqual(propr, val); 
-                var selectorExp =  Expression.Lambda<Func<Entity, bool>>(body, parameter);                    
-                originalQuery = System.Linq.Queryable.Where(originalQuery, selectorExp);
-            }
-
-            else
-            {
-                Expression val1 = Expression.Constant(initialDate, initialDate.GetType().GetNullableType());
-                Expression val2 = Expression.Constant(finalDate, finalDate.GetType().GetNullableType());
-                var propr1 = Expression.Property(parameter, attribute); 
-                var body1 = Expression.GreaterThan(propr1, val1); 
-                var body2 = Expression.LessThanOrEqual(propr1, val2);
-                var selectorExp1 =  Expression.Lambda<Func<Entity, bool>>(body1, parameter);  
-                var selectorExp2 =  Expression.Lambda<Func<Entity, bool>>(body2, parameter); 
-                var general = Expression.Lambda<Func<Entity, bool>>(
-                    Expression.And(selectorExp1.Body, selectorExp2.Body), parameter); 
-
-                originalQuery = System.Linq.Queryable.Where(originalQuery, general);
-            }
-
-            //filter.GetType().GetProperty("initialDate").SetValue(filter, null);
-            //filter.GetType().GetProperty("finalDate").SetValue(filter, null);
-            return originalQuery;          
-            
-        }
-
         public virtual IQueryable<Entity> DefaultWhere(IQueryable<Entity> originalQuery, VO filter, List<string> attributes)
         {            
             Expression queryExpr = originalQuery.Expression;
@@ -350,7 +287,6 @@ namespace Base.DAO
                 {
 
                 }
-
             }           
             return originalQuery;                      
         }        
@@ -389,18 +325,9 @@ namespace Base.DAO
         /// 
         /// Returns true case the condition to filter is valid and false if not;
         /// </summary>
-        public virtual IEnumerable<Entity> GetCustomWhere(IEnumerable<Entity> listToFilter, VO filter)
-        {
-            return listToFilter;
-        }
         public virtual IQueryable<Entity> GetCustomWhere(IQueryable<Entity> query, VO filter)
         {
             return query;
-        }
-
-        public virtual IQueryable<Entity> GetUserWhere(IQueryable<Entity> query, VO filter)
-        {
-            return DefaultWhere(query, filter,  IgnoreAttributes(filter, new List<string>(){"id"}));
         }
     }
 }

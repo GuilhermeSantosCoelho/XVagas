@@ -23,6 +23,6 @@ namespace XVagas.Entity{
         }
 
         public DbSet<User> Users {get; set;}
-        public DbSet<File> Files {get; set;}
+        public DbSet<FilePDF> Files {get; set;}
     }
 }

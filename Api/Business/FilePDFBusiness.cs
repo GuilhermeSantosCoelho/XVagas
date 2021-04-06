@@ -7,8 +7,8 @@ using XVagas.DAO;
 
 namespace XVagas.Business
 {
-    public class UserBusiness: BaseBusiness<UserDAO, DatabaseContext, UserVO, User, AutoMapperProfile>
+    public class FilePDFBusiness : BaseBusiness<FilePDFDAO, DatabaseContext, FilePDFVO, FilePDF, AutoMapperProfile>
     {
-
+        
     }
 }

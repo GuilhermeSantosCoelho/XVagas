@@ -14,7 +14,7 @@ namespace XVagas.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserController : BaseController<UserBusiness, UserDAO, DatabaseContext, UserVO, User, AutoMapperProfile>
+    public class UserController: BaseController<UserBusiness, UserDAO, DatabaseContext, UserVO, User, AutoMapperProfile>
     {
         
     }

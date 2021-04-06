@@ -1,15 +1,21 @@
 using System;
 using System.IO;
 using System.Net.Http.Headers;
+using Base.Controller;
 using Microsoft.AspNetCore.Mvc;
+using XVagas.DAO;
+using XVagas.Entity;
+using XVagas.Helpers;
+using XVagas.VO;
+using XVagas.Business;
 
 namespace XVagas.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UploadController : ControllerBase
+    public class FilePDFController : BaseController<FilePDFBusiness, FilePDFDAO, DatabaseContext, FilePDFVO, FilePDF, AutoMapperProfile>
     {
-        [HttpPost, DisableRequestSizeLimit]
+        [HttpPost("UploadFile"), DisableRequestSizeLimit]
         public IActionResult Upload()
         {
             try

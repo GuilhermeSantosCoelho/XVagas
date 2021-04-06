@@ -1,13 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Base.Entities;
 
 namespace XVagas.Entity{
-    public class File{
-        [Key]
-        [Required]
-        [Column(name: "ID")]
-        public long Id { get; set; }
-        
+    public class FilePDF: BaseEntity{
         [StringLength(150)]
 		[Column(name: "NomeArquivo")]
         public string NomeArquivo { get; set; }   

@@ -53,21 +53,6 @@ namespace Base.Controller
             }
         }
 
-        // POST api/{controller}/getAllFilter/{pageNumber}/{listSize}
-        [HttpPost]
-        [Route("allFilter/{pageNumber}/{listSize}")]
-        public virtual ActionResult<BaseResponseVO<VO>> GetAllFilter(int pageNumber, int listSize, [FromBody] VO filter = null)
-        {
-            try
-            {
-                return Ok(businessInstance.GetAllFilter(pageNumber, listSize, filter));
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
-        }
-
         [HttpGet]
         [Route("allFilter/{pageNumber}/{listSize}/")]
         public virtual ActionResult<BaseResponseVO<VO>> GetAllFilter2(int pageNumber, int listSize, [FromQuery] VO filter = null)
